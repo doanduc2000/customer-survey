@@ -13,6 +13,12 @@ const Header = () => {
               <img width={30} height={30} src={`${PUBLIC_URL}/assets/icons/user-icon.svg`} alt="" />
             </div>
             <span>Đoàn Minh Đức</span>
+            <div className={style['dropdown']}>
+              <ul>
+                <li>Thông tin cá nhân</li>
+                <li>Đăng xuất</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
