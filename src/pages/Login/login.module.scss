@@ -1,0 +1,15 @@
+.login {
+  background: #f9f9f9;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  &__box {
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2);
+  }
+}
