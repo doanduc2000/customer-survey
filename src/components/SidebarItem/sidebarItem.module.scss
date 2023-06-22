@@ -1,0 +1,36 @@
+.sidebarItem {
+  a {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.2s linear;
+    color: #686868;
+    text-transform: capitalize;
+    margin-bottom: 5px;
+    &:hover {
+      background: linear-gradient(to right, #ca932c, #e3c28b);
+      color: #fff;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0 0px 0 10px;
+    margin: 0;
+    a {
+      background: none;
+      color: #686868;
+    }
+    .active {
+      a {
+        background: linear-gradient(to right, #ca932c, #e3c28b);
+        color: #fff;
+      }
+    }
+  }
+}
+.active {
+  a {
+    background: linear-gradient(to right, #ca932c, #e3c28b);
+    color: #fff;
+  }
+}
