@@ -1,22 +1,25 @@
 import React from 'react';
 import style from './header.module.scss';
-import { PUBLIC_URL } from '@/utils/const';
 
 const Header = () => {
+  const name: string = 'Đoàn Minh Đức';
+  const nameArr = name.split('');
+
   return (
     <div className={style['header']}>
       <div className="container">
         <div className={style['box']}>
           <div className={style['title']}>Trang chủ</div>
           <div className={style['user']}>
-            <div className={style['icon']}>
-              <img width={30} height={30} src={`${PUBLIC_URL}/assets/icons/user-icon.svg`} alt="" />
+            <div className={style['icon']}>{nameArr[0]}</div>
+            <div className={style['info']}>
+              <div className={style['name']}>{name}</div>
+              <div className={style['role']}>Admin</div>
             </div>
-            <span>Đoàn Minh Đức</span>
+
             <div className={style['dropdown']}>
               <ul>
-                <li>Thông tin cá nhân</li>
-                <li>Đăng xuất</li>
+                <li className={style['logout']}>Đăng xuất</li>
               </ul>
             </div>
           </div>

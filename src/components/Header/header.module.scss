@@ -1,29 +1,32 @@
 .header {
-  background: #fff;
-  box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.1);
-  padding: 5px 0;
   .box {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .title {
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 24px;
   }
   .user {
     position: relative;
     display: flex;
-    gap: 10px;
     align-items: center;
+    gap: 10px;
     cursor: pointer;
-    transition: all 0.2s linear;
     padding: 5px 0;
-    span {
-      width: 105px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .info {
+      border-radius: 4px;
+
+      .name {
+        font-weight: 600;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 105px;
+      }
+      .role {
+        font-size: 12px;
+      }
     }
     &:hover {
       .dropdown {
@@ -32,37 +35,57 @@
     }
   }
   .icon {
-    width: 27px;
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    max-width: 40px;
+    min-width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #e3c28b;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
   }
   .dropdown {
     display: none;
     position: absolute;
-    left: 0;
-    width: 150px;
-    top: 35px;
+    right: 0;
+    width: 100%;
+    top: 48px;
     background: #fff;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     overflow: hidden;
+
     ul {
       list-style: none;
       margin: 0;
       padding: 0;
       overflow: hidden;
-      padding: 5px;
+
       li {
-        padding: 3px 10px;
+        padding: 10px;
         transition: all 0.2s linear;
         border-radius: 4px;
         background: #fff;
+        cursor: pointer;
         &:hover {
-          background: linear-gradient(to right, #ca932c, #e3c28b);
-          color: #fff;
+          background: #f3f3f3;
+        }
+      }
+      .logout {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &::before {
+          content: '';
+          background: url(../../../public/assets/icons/logout-icon.svg) center 0 no-repeat;
+          display: block;
+          width: 20px;
+          height: 20px;
         }
       }
     }
