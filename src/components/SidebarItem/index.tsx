@@ -23,13 +23,15 @@ const SidebarItem = ({ name, path, dropdown }: Menu) => {
   return (
     <div className={activeMenu(path) ? `${style['sidebarItem']} + ${style['active']}` : style['sidebarItem']}>
       <Link to={path} onClick={handleIsDropdown}>
-        {name}
+        {dropdown.length === 0 ? <span>{name}</span> : <span className={style['dropDownIcon']}>{name}</span>}
       </Link>
       {isDropdown && dropdown.length !== 0 && (
         <ul>
           {dropdown.map((item) => (
             <li className={item.path === location.pathname ? style['active'] : ''} key={item.path}>
-              <Link to={item.path}>{item.name}</Link>
+              <Link to={item.path}>
+                <span>{item.name}</span>
+              </Link>
             </li>
           ))}
         </ul>

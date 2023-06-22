@@ -7,9 +7,22 @@
     color: #686868;
     text-transform: capitalize;
     margin-bottom: 5px;
-    &:hover {
-      background: linear-gradient(to right, #ca932c, #e3c28b);
-      color: #fff;
+    span {
+      display: block;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        transform: translateX(3px);
+      }
+    }
+    .dropDownIcon {
+      display: flex;
+      justify-content: space-between;
+      &::after {
+        content: '❮';
+        transform: rotate(270deg);
+        display: block;
+        font-size: 12px;
+      }
     }
   }
   ul {
