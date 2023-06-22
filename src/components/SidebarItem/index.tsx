@@ -28,7 +28,7 @@ const SidebarItem = ({ name, path, dropdown }: Menu) => {
       {isDropdown && dropdown.length !== 0 && (
         <ul>
           {dropdown.map((item) => (
-            <li className={item.path === location.pathname ? style['active'] : ''} key={item.path}>
+            <li className={item.path === location.pathname ? style['dropActive'] : ''} key={item.path}>
               <Link to={item.path}>
                 <span>{item.name}</span>
               </Link>

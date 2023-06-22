@@ -33,10 +33,10 @@
       background: none;
       color: #686868;
     }
-    .active {
+    .dropActive {
       a {
-        background: linear-gradient(to right, #ca932c, #e3c28b);
-        color: #fff;
+        color: #ca932c !important;
+        font-weight: 600;
       }
     }
   }
