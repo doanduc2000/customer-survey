@@ -7,3 +7,7 @@ export interface Dropdown {
   name: string;
   path: string;
 }
+export interface RouteList {
+  name: string;
+  path: string;
+}
