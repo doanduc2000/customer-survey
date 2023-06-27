@@ -19,6 +19,12 @@ const BarChart = ({ categories, seriesData, seriesLabels, colors }: StackedChart
     plotOptions: {
       bar: {
         horizontal: false,
+        dataLabels: {
+          position: 'top',
+          total: {
+            enabled: true,
+          },
+        },
       },
     },
     dataLabels: {
