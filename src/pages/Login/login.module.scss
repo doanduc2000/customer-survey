@@ -11,6 +11,10 @@
     align-items: center;
     background: #fff;
     box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 40px 0;
   }
   &__pic {
     width: 60%;
@@ -23,6 +27,17 @@
   }
   &__detail {
     width: 40%;
+    position: relative;
+    p {
+      text-align: center;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      margin: 0;
+      bottom: -30px;
+      color: red;
+      font-style: italic;
+    }
   }
   &__form {
     width: 80%;
@@ -83,6 +98,7 @@
     &__box {
       width: fit-content;
       margin: 0 auto;
+      padding: 0;
     }
     &__pic {
       display: none;
