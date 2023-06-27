@@ -11,7 +11,9 @@ const Home = () => {
       <div className={style['right']}>
         <Header />
         <div className="container">
-          <Outlet />
+          <div className={style['main']}>
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

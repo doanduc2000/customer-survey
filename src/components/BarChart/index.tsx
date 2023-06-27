@@ -1,32 +1,43 @@
 import { ApexOptions } from 'apexcharts';
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
-
-const BarChart = () => {
-  const chartOptions: ApexOptions = {};
-  const chartSeries = [
-    {
-      data: [
-        {
-          x: 'category A',
-          y: 10,
-        },
-        {
-          x: 'category B',
-          y: 18,
-        },
-        {
-          x: 'category C',
-          y: 13,
-        },
-      ],
+interface StackedChartProps {
+  categories: string[];
+  seriesData: number[][];
+  seriesLabels: string[];
+  colors: string[];
+}
+const BarChart = ({ categories, seriesData, seriesLabels, colors }: StackedChartProps) => {
+  const chartOptions: ApexOptions = {
+    chart: {
+      type: 'bar',
+      stacked: true,
+      toolbar: {
+        show: false,
+      },
     },
-  ];
-  return (
-    <div>
-      <ReactApexChart options={chartOptions} series={chartSeries} type="bar" height={400} />
-    </div>
-  );
+    plotOptions: {
+      bar: {
+        horizontal: false,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    xaxis: {
+      categories: categories,
+    },
+    series: seriesData.map((data, index) => ({
+      name: seriesLabels[index],
+      data: data,
+    })),
+    legend: {
+      position: 'top',
+    },
+    colors: colors,
+  };
+
+  return <ReactApexChart options={chartOptions} series={chartOptions.series} type="bar" height={300} />;
 };
 
 export default BarChart;
