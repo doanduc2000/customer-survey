@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './report.module.scss';
 import BarChart from '@/components/BarChart';
+import { Link } from 'react-router-dom';
 
 const Report = () => {
   const numberAllBrand = {
@@ -27,6 +28,10 @@ const Report = () => {
     <div className={style['report']}>
       <div className={style['box']}>
         <div className={style['item']}>
+          <div className={style['header']}>
+            <span>Số lượng toàn thương hiệu</span>
+            <Link to="#">Xem chi tiết ❯</Link>
+          </div>
           <BarChart
             categories={numberAllBrand.categories}
             seriesData={numberAllBrand.seriesData}
@@ -35,6 +40,10 @@ const Report = () => {
           />
         </div>
         <div className={style['item']}>
+          <div className={style['header']}>
+            <span>Số lượng toàn thương hiệu</span>
+            <Link to="#">Xem chi tiết ❯</Link>
+          </div>
           <BarChart
             categories={numberAllBrand.categories}
             seriesData={numberAllBrand.seriesData}

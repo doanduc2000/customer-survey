@@ -19,6 +19,9 @@ const SidebarItem = ({ name, path, dropdown }: Menu) => {
     if (path.split('/')[1] === location.pathname.split('/')[1] && location.pathname.split('/')[2]) {
       setIsDropdown(true);
     }
+    if (path.split('/')[1] !== location.pathname.split('/')[1]) {
+      setIsDropdown(false);
+    }
   }, [path, location]);
   return (
     <div className={activeMenu(path) ? `${style['sidebarItem']} + ${style['active']}` : style['sidebarItem']}>
