@@ -1,13 +1,18 @@
 import React from 'react';
 import style from './header.module.scss';
 import { routeList } from '@/routers/route';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const name: string = 'Đoàn Minh Đức';
   const nameArr = name.split('');
   const title = routeList.find((item) => item.path === location.pathname)?.name;
+  const logout = () => {
+    localStorage.clear();
+    navigate('/login');
+  };
   return (
     <div className={style['header']}>
       <div className="container">
@@ -22,7 +27,9 @@ const Header = () => {
 
             <div className={style['dropdown']}>
               <ul>
-                <li className={style['logout']}>Đăng xuất</li>
+                <li className={style['logout']} onClick={logout}>
+                  Đăng xuất
+                </li>
               </ul>
             </div>
           </div>
