@@ -10,5 +10,5 @@ export interface Dropdown {
 export interface RouteList {
   name: string;
   path: string;
-  component: any;
+  component: JSX.Element;
 }

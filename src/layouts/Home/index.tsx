@@ -10,7 +10,7 @@ const Home = () => {
       <Sidebar />
       <div className={style['right']}>
         <Header />
-        <div className={style['main']}>
+        <div className="container">
           <Outlet />
         </div>
       </div>
